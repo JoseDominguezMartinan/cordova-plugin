@@ -16,10 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 var app = {
+    
+
     // Application Constructor
     initialize: function() {
+        
+
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        // recogemos el boton 
        document.getElementById("ok").addEventListener('click',this.boton);
     },
 
@@ -33,14 +39,31 @@ var app = {
        
     },
     boton : function(){
-        var latitud=document.getElementById("latitud").value
-        var longitud=document.getElementById("longitud").value
-        nativegeocoder.reverseGeocode(success, failure, latitud, longitud, { useLocale: true, maxResults: 1 });
+        // recogemos del cuadro de texto los datos que necesitamos para la conversion 
+        var latitud=document.getElementById("latitud").value;
+        var longitud=document.getElementById("longitud").value;
+        // realizamos la conversion 
+        nativegeocoder.reverseGeocode(success, failure, 52.5072095, 13.1452818, { useLocale: true, maxResults: 1 });
  
         function success(result) {
+            // recogemos el resultado
         var firstResult = result[0];
-        console.log("First Result: " + JSON.stringify(firstResult));
+        var resultado=JSON.stringify(firstResult);
+        var pais=firstResult.countryName;
+        var codigoPais=firstResult.countryCode;
+        var codigoPostal=firstResult.postalCode;
+        var localidad=firstResult.locality;
+        var areaAdministrativa=firstResult.administrativeArea;
+
+        // para comprobar toda la informacion por el log
+        
+
+        document.getElementById("texto").innerHTML=pais+"<br>"+codigoPais+"<br>"+codigoPostal+"<br>"+localidad+"<br>"+areaAdministrativa+"<br>";
+        console.log("First Result: " + resultado);
+
+
         }
+        
  
         function failure(err) {
         console.log(err);
@@ -49,7 +72,7 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-            
+          
         }
     
         
