@@ -9,6 +9,8 @@ La geocodificación consiste en obtener la informacion de unas determinadas coor
    * tenemos un boton para cada accion , por lo que se pueden ver ambas cosas al mismo tiempo 
  - documentacion:
       https://cordova.apache.org/
+      
       https://www.npmjs.com/package/cordova-plugin-nativegeocoder
+      
       https://www.w3schools.com/js/ usado para alguna duda sobre el lenguaje 
       
