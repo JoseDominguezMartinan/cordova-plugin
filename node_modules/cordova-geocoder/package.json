@@ -1,0 +1,62 @@
+{
+  "_from": "git+https://github.com/Eusebius1920/cordova-geocoder.git",
+  "_id": "cordova-geocoder@1.0.3",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-geocoder",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/Eusebius1920/cordova-geocoder.git",
+    "rawSpec": "https://github.com/Eusebius1920/cordova-geocoder.git",
+    "saveSpec": "git+https://github.com/Eusebius1920/cordova-geocoder.git",
+    "fetchSpec": "https://github.com/Eusebius1920/cordova-geocoder.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/Eusebius1920/cordova-geocoder.git#b2a6cbe84473c1114986f0c4c223c3179999d5ee",
+  "_spec": "https://github.com/Eusebius1920/cordova-geocoder.git",
+  "_where": "C:\\Users\\Jose\\cordova\\geocode",
+  "author": {
+    "name": "Eusebius1920"
+  },
+  "bugs": {
+    "url": "https://github.com/Eusebius1920/cordova-geocoder/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-geocoder",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "A simple geocoder for cordova (Android, iOS)",
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.5.0"
+    }
+  ],
+  "homepage": "https://github.com/Eusebius1920/cordova-geocoder#readme",
+  "keywords": [
+    "geo",
+    "geocoder",
+    "reverse geocoder",
+    "inverse geocoder",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-geocoder",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eusebius1920/cordova-geocoder.git"
+  },
+  "version": "1.0.3"
+}
