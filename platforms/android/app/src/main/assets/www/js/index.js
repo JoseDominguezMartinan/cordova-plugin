@@ -33,7 +33,9 @@ var app = {
        
     },
     boton : function(){
-        nativegeocoder.reverseGeocode(success, failure, 52.5072095, 13.1452818, { useLocale: true, maxResults: 1 });
+        var latitud=document.getElementById("latitud").value
+        var longitud=document.getElementById("longitud").value
+        nativegeocoder.reverseGeocode(success, failure, latitud, longitud, { useLocale: true, maxResults: 1 });
  
         function success(result) {
         var firstResult = result[0];
