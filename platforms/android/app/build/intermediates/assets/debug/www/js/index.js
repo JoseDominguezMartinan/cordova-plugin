@@ -27,6 +27,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
         // recogemos el boton 
        document.getElementById("ok").addEventListener('click',this.boton);
+       document.getElementById("inverso").addEventListener('click',this.inverso)
     },
 
     // deviceready Event Handler
@@ -43,7 +44,7 @@ var app = {
         var latitud=document.getElementById("latitud").value;
         var longitud=document.getElementById("longitud").value;
         // realizamos la conversion 
-        nativegeocoder.reverseGeocode(success, failure, 52.5072095, 13.1452818, { useLocale: true, maxResults: 1 });
+        nativegeocoder.reverseGeocode(success, failure, latitud, longitud, { useLocale: true, maxResults: 1 });
  
         function success(result) {
             // recogemos el resultado
@@ -57,8 +58,8 @@ var app = {
 
         // para comprobar toda la informacion por el log
         
-
-        document.getElementById("texto").innerHTML=pais+"<br>"+codigoPais+"<br>"+codigoPostal+"<br>"+localidad+"<br>"+areaAdministrativa+"<br>";
+        // mostramos por pantalla la informacion formateada 
+        document.getElementById("texto").innerHTML="pais: "+pais+"<br>"+"codigo pais: "+codigoPais+"<br>"+"codigo postal"+codigoPostal+"<br>"+"localidade: "+localidad+"<br>"+"area administrativa: "+areaAdministrativa+"<br>";
         console.log("First Result: " + resultado);
 
 
@@ -68,6 +69,23 @@ var app = {
         function failure(err) {
         console.log(err);
 }
+    },
+    inverso: function(){
+        // recogemos el lugar de donde queremos sacar las coordenadas 
+        var pais=document.getElementById("pais").value;
+        nativegeocoder.forwardGeocode(success, failure,pais, { useLocale: true, maxResults: 1 });
+ 
+        function success(coordinates) {
+          var firstResult = coordinates[0];
+          // lo mostramos en el segundo parrafo
+          document.getElementById("texto2").innerHTML="las cordenadas de la latitud son = " + firstResult.latitude + " y la longitud = " + firstResult.longitude
+          console.log("The coordinates are latitude = " + firstResult.latitude + " and longitude = " + firstResult.longitude);
+        }
+         
+        function failure(err) {
+          console.log(err);
+        } 
+
     },
 
     // Update DOM on a Received Event
